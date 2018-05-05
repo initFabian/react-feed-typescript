@@ -9,7 +9,7 @@ const mapStateToProps = (state: MapStateToProps): MapStateToProps => ({
 })
 
 const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
-  onUpdateFilter(filter: 'All' | 'Text' | 'Video' | 'Image') {
+  onUpdateFilter(filter: PostType) {
     dispatch(filterPosts(filter))
   }
 })

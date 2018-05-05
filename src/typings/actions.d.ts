@@ -21,7 +21,7 @@ declare global {
 
   interface FilterFeedAction {
     type: TypeKeys.FILTER_POSTS
-    payload: 'All' | 'Text' | 'Video' | 'Image'
+    payload: PostType
   }
 
   interface RemovePostAction {

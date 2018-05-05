@@ -1,7 +1,4 @@
-export default (
-  state: 'All' | 'Text' | 'Video' | 'Image' = 'All',
-  action: FeedActions
-): 'All' | 'Text' | 'Video' | 'Image' => {
+export default (state: PostType = PostType.All, action: FeedActions): PostType => {
   switch (action.type) {
     case TypeKeys.FILTER_POSTS:
       return action.payload

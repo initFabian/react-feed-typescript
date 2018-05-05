@@ -11,11 +11,11 @@ interface ItemFactoryProps {
 export default (props: ItemFactoryProps): JSX.Element => {
   const { post } = props
   switch (post.type) {
-    case 'Text':
+    case PostType.Text:
       return <TextPost {...post} />
-    case 'Video':
+    case PostType.Video:
       return <VideoPost {...post} />
-    case 'Image':
+    case PostType.Image:
       return <ImagePost {...post} />
     default:
       return <div />

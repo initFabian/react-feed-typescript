@@ -3,11 +3,11 @@ import * as ReactDOM from 'react-dom'
 import { Row, Col, Tab, Tabs } from 'react-bootstrap'
 
 interface FilterComponentProps extends FilterStore {
-  onUpdateFilter(type: 'All' | 'Text' | 'Video' | 'Image'): void
+  onUpdateFilter(type: PostType): void
 }
 
 export default (props: FilterComponentProps) => {
-  const filterHandler = (type: 'All' | 'Text' | 'Video' | 'Image') => {
+  const filterHandler = (type: PostType) => {
     props.onUpdateFilter(type)
   }
 
@@ -20,10 +20,10 @@ export default (props: FilterComponentProps) => {
           activeKey={props.filter}
           onSelect={filterHandler.bind(this)}
         >
-          <Tab eventKey={'All'} title="All" />
-          <Tab eventKey={'Text'} title="Text" />
-          <Tab eventKey={'Image'} title="Images" />
-          <Tab eventKey={'Video'} title="Videos" />
+          <Tab eventKey={PostType.All} title="All" />
+          <Tab eventKey={PostType.Text} title="Text" />
+          <Tab eventKey={PostType.Image} title="Images" />
+          <Tab eventKey={PostType.Video} title="Videos" />
         </Tabs>
       </Col>
     </Row>

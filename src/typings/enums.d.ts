@@ -1,4 +1,11 @@
 declare global {
+  const enum PostType {
+    Text = 'Text',
+    Image = 'Image',
+    Video = 'Video',
+    All = 'All'
+  }
+
   const enum TypeKeys {
     ADD_POST = 'ADD_POST',
     LIKE_POST = 'LIKE_POST',

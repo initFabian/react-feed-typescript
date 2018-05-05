@@ -3,8 +3,8 @@ import * as ReactDOM from 'react-dom'
 import { ToggleButtonGroup, ControlLabel, Radio, FormGroup, Col } from 'react-bootstrap'
 
 interface RadioGroupProps {
-  defaultValue: 'Text'
-  changeHandler(value: 'Text' | 'Video' | 'Image'): void
+  defaultValue: PostType.Text
+  changeHandler(value: PostType): void
 }
 
 export default (props: RadioGroupProps) => {
@@ -20,13 +20,13 @@ export default (props: RadioGroupProps) => {
           defaultValue={props.defaultValue}
           onChange={props.changeHandler.bind(this)}
         >
-          <Radio name="radioGroup" value={'Text'} inline>
+          <Radio name="radioGroup" value={PostType.Text} inline>
             Text
           </Radio>{' '}
-          <Radio name="radioGroup" value={'Image'} inline>
+          <Radio name="radioGroup" value={PostType.Image} inline>
             Image Link
           </Radio>{' '}
-          <Radio name="radioGroup" value={'Video'} inline>
+          <Radio name="radioGroup" value={PostType.Video} inline>
             Video Link
           </Radio>
         </ToggleButtonGroup>

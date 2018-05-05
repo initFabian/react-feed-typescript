@@ -2,7 +2,7 @@ declare global {
   interface Post {
     id: UUID
     title: string
-    type: 'All' | 'Text' | 'Video' | 'Image'
+    type: PostType
     body: string
     liked: boolean
   }
@@ -21,7 +21,7 @@ declare global {
   }
 
   interface FilterStore {
-    filter: 'All' | 'Text' | 'Video' | 'Image'
+    filter: PostType
   }
 
   interface StateStore extends ErrorStore, PostStore, FilterStore {}

@@ -3,7 +3,7 @@ declare global {
 
   interface PostInterface {
     title: string
-    type: 'All' | 'Text' | 'Video' | 'Image'
+    type: PostType
     body: string
   }
 

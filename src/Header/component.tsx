@@ -12,7 +12,7 @@ interface HeaderComponentProps {
 export default (props: HeaderComponentProps) => {
   let titleInputRef: HTMLInputElement
   let bodyInputRef: HTMLInputElement
-  let postType: 'All' | 'Text' | 'Video' | 'Image' = 'Text'
+  let postType: PostType = PostType.Text
 
   const titleTextFieldRef = (ref: HTMLInputElement) => {
     titleInputRef = ref
@@ -22,7 +22,7 @@ export default (props: HeaderComponentProps) => {
     bodyInputRef = ref
   }
 
-  const updateTypeHandler = (value: 'All' | 'Text' | 'Video' | 'Image') => {
+  const updateTypeHandler = (value: PostType) => {
     postType = value
   }
 
@@ -38,7 +38,7 @@ export default (props: HeaderComponentProps) => {
 
     titleInputRef.value = ''
     bodyInputRef.value = ''
-    postType = 'Text'
+    postType = PostType.Text
   }
 
   return (
