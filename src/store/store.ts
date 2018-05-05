@@ -1,8 +1,8 @@
 import appReducer from './reducers'
 import thunk from 'redux-thunk'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, Store } from 'redux'
 
-const consoleMessages = (store) => (next) => (action) => {
+const consoleMessages = (store: any) => (next: any) => (action: any) => {
   let result
 
   console.groupCollapsed(`dispatching action => ${action.type}`)
@@ -21,7 +21,10 @@ const consoleMessages = (store) => (next) => (action) => {
   return result
 }
 
-export default (initialState = {}) => {
-  const middleware = applyMiddleware(thunk, consoleMessages)
-  return middleware(createStore)(appReducer, initialState)
+export default (initialState: { errors: ErrorItem[] }): Store<StateStore> => {
+  return createStore<StateStore>(
+    appReducer,
+    initialState,
+    applyMiddleware(thunk, consoleMessages)
+  )
 }

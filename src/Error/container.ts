@@ -2,16 +2,7 @@ import { connect, Dispatch } from 'react-redux'
 import { clearError } from './actions'
 import ErrorListComponent from './component'
 
-interface ErrorItem {
-  id: string
-  message: string
-}
-
-interface ErrorListState {
-  errors: ErrorItem[]
-}
-
-const mapStateToProps = (state: ErrorListState) => ({
+const mapStateToProps = (state: ErrorStore) => ({
   errors: state.errors
 })
 

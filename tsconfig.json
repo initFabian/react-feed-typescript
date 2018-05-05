@@ -12,5 +12,5 @@
     "strict": true,
     "noImplicitThis": false
   },
-  "include": ["./src/**/*.tsx", "./src/**/*.jsx", "./src/**/*.js"]
+  "include": ["./src/**/*"]
 }

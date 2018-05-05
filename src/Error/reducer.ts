@@ -1,15 +1,5 @@
 import C, { UUID } from '../constants'
 
-interface ErrorItem {
-  id: string
-  message: string
-}
-
-interface ErrorAction {
-  type: string
-  payload: string
-}
-
 const newError = (message: string): ErrorItem => ({
   id: UUID(),
   message

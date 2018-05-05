@@ -7,11 +7,22 @@ export default {
   REMOVE_ERROR: 'REMOVE_ERROR'
 }
 
-export const UUID = () => {
+export const UUID = (): UUID => {
   function s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
       .toString(16)
       .substring(1)
   }
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4()
+  return (s4() +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    s4() +
+    s4()) as UUID
 }
