@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import HeaderContainer from './Header/container'
 import FeedContainer from './Feed/container'
 import ErrorContainer from './Error/container'
 import { Row, Col, Grid, Navbar } from 'react-bootstrap'
 
-export default (props) => (
+export default () => (
   <Grid style={{ marginTop: 100, marginBottom: 100 }}>
     <Navbar
       fixedTop={true}
