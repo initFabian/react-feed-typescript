@@ -1,20 +1,14 @@
 declare global {
   type UUID = 'UUID'
 
-  interface ErrorItem {
-    id: UUID
-    message: string
+  interface PostInterface {
+    title: string
+    type: 'All' | 'Text' | 'Video' | 'Image'
+    body: string
   }
 
-  interface ErrorAction {
-    type: string
-    payload: string
+  interface PostProps {
+    body: string
   }
-
-  interface ErrorStore {
-    errors: ErrorItem[]
-  }
-
-  interface StateStore extends ErrorStore {}
 }
 export {}

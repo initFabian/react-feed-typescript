@@ -1,16 +1,16 @@
-import C, { UUID } from '../constants'
+import * as C from '../constants'
 
 const newError = (message: string): ErrorItem => ({
-  id: UUID(),
+  id: C.UUID(),
   message
 })
 
-export default (state = [], action: ErrorAction) => {
+export default (state: ErrorItem[] = [], action: ErrorActions): ErrorItem[] => {
   switch (action.type) {
-    case C.ADD_ERROR:
+    case TypeKeys.ADD_ERROR:
       return [...state, newError(action.payload)]
-    case C.REMOVE_ERROR:
-      return state.filter((e: ErrorItem) => e.id !== action.payload)
+    case TypeKeys.REMOVE_ERROR:
+      return state.filter((e) => e.id !== action.payload)
     default:
       return state
   }

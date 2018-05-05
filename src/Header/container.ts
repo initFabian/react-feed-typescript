@@ -1,11 +1,11 @@
-import { connect } from 'react-redux'
+import { connect, Dispatch } from 'react-redux'
 import { addPost } from './actions'
 import HeaderComponent from './component'
 
-const mapStateToProps = (state, props) => ({})
+const mapStateToProps = () => ({})
 
-const mapDispatchToProps = (dispatch) => ({
-  onAddPost(post) {
+const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
+  onAddPost(post: PostInterface) {
     // IF YOU'RE READING THIS...
 
     // I was getting some some error 'X-Frame-Options' to 'sameorigin'
@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => ({
 
     // so what Im doing is grabbing the id of the video and using post
     // working youtube embed url
-    if (post.type === 'video') {
+    if (post.type === 'Video') {
       var index = post.body.lastIndexOf('=') // came from browser url
       if (index < 0) {
         index = post.body.lastIndexOf('/') // came from share button url

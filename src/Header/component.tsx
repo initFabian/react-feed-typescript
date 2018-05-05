@@ -1,28 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import { Button, Form, FormGroup, Col } from 'react-bootstrap'
 import FilterContainer from '../Filter/container'
 import PostRadioComponent from '../components/form-components/RadioGroup'
 import PostTextFieldComponent from '../components/form-components/TextFieldGroup'
 
-export default (props) => {
-  let titleInputRef = null
-  let bodyInputRef = null
-  let postType = 'text'
+interface HeaderComponentProps {
+  onAddPost(post: PostInterface): void
+}
 
-  const titleTextFieldRef = (input) => {
-    titleInputRef = input
+export default (props: HeaderComponentProps) => {
+  let titleInputRef: HTMLInputElement
+  let bodyInputRef: HTMLInputElement
+  let postType: 'All' | 'Text' | 'Video' | 'Image' = 'Text'
+
+  const titleTextFieldRef = (ref: HTMLInputElement) => {
+    titleInputRef = ref
   }
 
-  const descriptionTextFieldRef = (input) => {
-    bodyInputRef = input
+  const descriptionTextFieldRef = (ref: HTMLInputElement) => {
+    bodyInputRef = ref
   }
 
-  const updateTypeHandler = (value) => {
+  const updateTypeHandler = (value: 'All' | 'Text' | 'Video' | 'Image') => {
     postType = value
   }
 
-  const submitFormHandler = (e) => {
+  const submitFormHandler = (e: React.FormEvent<Event>) => {
     e.preventDefault()
     if (!titleInputRef.value) return
 
@@ -34,6 +38,7 @@ export default (props) => {
 
     titleInputRef.value = ''
     bodyInputRef.value = ''
+    postType = 'Text'
   }
 
   return (
@@ -50,7 +55,7 @@ export default (props) => {
           bindingRef={descriptionTextFieldRef}
         />
         <PostRadioComponent
-          defaultValue={'text'}
+          defaultValue={postType}
           changeHandler={updateTypeHandler.bind(this)}
         />
         <FormGroup>

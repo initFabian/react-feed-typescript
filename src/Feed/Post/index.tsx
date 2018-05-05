@@ -1,18 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import { Media } from 'react-bootstrap'
 import PostFactory from './PostFactory'
 
-export default (props) => {
+interface PostProps {
+  post: Post
+  onRemovePost(id: UUID): void
+  onPostLike(id: UUID): void
+}
+
+export default (props: PostProps) => {
   const { post } = props
-  const likeHandler = (e) => {
+  const likeHandler = (e: Event) => {
     e.preventDefault()
     props.onPostLike(post.id)
   }
 
-  const onRemoveHandler = () => {
-    props.onRemovePost(post.id)
-  }
+  const onRemoveHandler = () => props.onRemovePost(post.id)
 
   const trashCanIcon = (
     <a

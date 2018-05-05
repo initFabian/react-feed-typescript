@@ -1,17 +1,23 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import TextPost from '../../components/post-types/Text'
 import VideoPost from '../../components/post-types/Video'
 import ImagePost from '../../components/post-types/Image'
 
-export default (props) => {
+interface ItemFactoryProps {
+  post: Post
+}
+
+export default (props: ItemFactoryProps): JSX.Element => {
   const { post } = props
   switch (post.type) {
-    case 'text':
+    case 'Text':
       return <TextPost {...post} />
-    case 'video':
+    case 'Video':
       return <VideoPost {...post} />
-    case 'image':
+    case 'Image':
       return <ImagePost {...post} />
+    default:
+      return <div />
   }
 }

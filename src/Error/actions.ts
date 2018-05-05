@@ -1,11 +1,9 @@
-import C from '../constants'
-
-export const addError = (message: string): ErrorAction => ({
-  type: C.ADD_ERROR,
+export const addError = (message: string): AddErrorAction => ({
+  type: TypeKeys.ADD_ERROR,
   payload: message
 })
 
-export const clearError = (id: string): ErrorAction => ({
-  type: C.REMOVE_ERROR,
+export const clearError = (id: UUID): RemoveErrorAction => ({
+  type: TypeKeys.REMOVE_ERROR,
   payload: id
 })

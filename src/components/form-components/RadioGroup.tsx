@@ -1,8 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import { ToggleButtonGroup, ControlLabel, Radio, FormGroup, Col } from 'react-bootstrap'
 
-export default (props) => {
+interface RadioGroupProps {
+  defaultValue: 'Text'
+  changeHandler(value: 'Text' | 'Video' | 'Image'): void
+}
+
+export default (props: RadioGroupProps) => {
   return (
     <FormGroup>
       <Col componentClass={ControlLabel} sm={3}>
@@ -15,13 +20,13 @@ export default (props) => {
           defaultValue={props.defaultValue}
           onChange={props.changeHandler.bind(this)}
         >
-          <Radio name="radioGroup" value={'text'} inline>
+          <Radio name="radioGroup" value={'Text'} inline>
             Text
           </Radio>{' '}
-          <Radio name="radioGroup" value={'image'} inline>
+          <Radio name="radioGroup" value={'Image'} inline>
             Image Link
           </Radio>{' '}
-          <Radio name="radioGroup" value={'video'} inline>
+          <Radio name="radioGroup" value={'Video'} inline>
             Video Link
           </Radio>
         </ToggleButtonGroup>

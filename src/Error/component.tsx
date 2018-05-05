@@ -13,7 +13,6 @@ export default (props: ErrorComponentProps) => {
   }
 
   const errorList = props.errors.map((errObj) => {
-    console.log(errObj)
     return (
       <ErrorItem
         key={errObj.id}

@@ -6,13 +6,13 @@ const consoleMessages = (store: any) => (next: any) => (action: any) => {
   let result
 
   console.groupCollapsed(`dispatching action => ${action.type}`)
-  console.log('posts', store.getState().posts.length)
+  console.log('feed', store.getState().feed.length)
   result = next(action)
 
-  let { posts, errors } = store.getState()
+  let { feed, errors } = store.getState()
 
   console.log(`
-    posts: ${JSON.stringify(posts)}
+    feed: ${JSON.stringify(feed)}
     errors: ${errors}
   `)
 
@@ -21,7 +21,7 @@ const consoleMessages = (store: any) => (next: any) => (action: any) => {
   return result
 }
 
-export default (initialState: { errors: ErrorItem[] }): Store<StateStore> => {
+export default (initialState: StateStore) => {
   return createStore<StateStore>(
     appReducer,
     initialState,

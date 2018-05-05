@@ -8,16 +8,15 @@ import App from './App'
 const initialState = localStorage['redux-store']
   ? JSON.parse(localStorage['redux-store'])
   : {
-      filter: 'all',
-      posts: [],
+      filter: 'All',
+      feed: [],
       errors: []
     }
-
 const saveState = () => {
   localStorage['redux-store'] = JSON.stringify(store.getState())
 }
 
-const handleError = (error: any) => {
+const handleError = (error: { message: string }) => {
   store.dispatch(addError(error.message))
 }
 
