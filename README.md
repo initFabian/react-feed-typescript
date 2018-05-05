@@ -38,6 +38,7 @@ Next we need to add a [tsconfig.json](link/to/documentation) document to configu
   "compilerOptions": {
     "outDir": "./public/",
     "sourceMap": true,
+    "module": "es6",
     "lib": ["es6", "dom"],
     "target": "es5",
     "jsx": "react",
