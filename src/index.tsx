@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import storeFactory from './store/store'
 import { addError } from './Error/actions'
 import { Provider } from 'react-redux'
@@ -17,14 +17,16 @@ const saveState = () => {
   localStorage['redux-store'] = JSON.stringify(store.getState())
 }
 
-const handleError = (error) => {
+const handleError = (error: any) => {
   store.dispatch(addError(error.message))
 }
 
 const store = storeFactory(initialState)
 store.subscribe(saveState)
 
+// @ts-ignore
 window.React = React
+// @ts-ignore
 window.store = store
 
 window.addEventListener('error', handleError)
