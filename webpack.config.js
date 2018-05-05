@@ -19,15 +19,15 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
 
   module: {
     rules: [{
         enforce: 'pre',
-        test: /\.jsx$/,
+        test: /\.(tsx?|jsx?)$/,
         exclude: /node_modules/,
-        loaders: ['react-hot-loader', 'babel-loader']
+        use: ['awesome-typescript-loader']
       },
       {
         test: /\.html$/,

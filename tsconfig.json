@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./public/",
+    "sourceMap": true,
+    "lib": ["es6", "dom"],
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "strict": true,
+    "noImplicitThis": false
+  },
+  "include": ["./src/**/*.tsx", "./src/**/*.jsx", "./src/**/*.js"]
+}
