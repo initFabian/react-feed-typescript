@@ -8,6 +8,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "allowJs": true,
+    "noUnusedParameters": true,
     "strict": true,
     "noImplicitThis": false
   },
