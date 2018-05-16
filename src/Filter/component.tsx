@@ -2,11 +2,11 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Row, Col, Tab, Tabs } from 'react-bootstrap'
 
-interface FilterComponentProps extends FilterStore {
+interface IFilterComponentProps extends IFilterStore {
   onUpdateFilter(type: PostType): void
 }
 
-export default (props: FilterComponentProps) => {
+export default (props: IFilterComponentProps) => {
   const filterHandler = (type: PostType) => {
     props.onUpdateFilter(type)
   }

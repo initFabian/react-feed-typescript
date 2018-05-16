@@ -3,13 +3,13 @@ import * as ReactDOM from 'react-dom'
 import { Media } from 'react-bootstrap'
 import PostFactory from './PostFactory'
 
-interface PostProps {
-  post: Post
+interface IPostProps {
+  post: IPost
   onRemovePost(id: UUID): void
   onPostLike(id: UUID): void
 }
 
-export default (props: PostProps) => {
+export default (props: IPostProps) => {
   const { post } = props
   const likeHandler = (e: Event) => {
     e.preventDefault()

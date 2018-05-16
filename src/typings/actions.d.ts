@@ -1,44 +1,44 @@
 declare global {
-  interface AddErrorAction {
+  interface IAddErrorAction {
     type: TypeKeys.ADD_ERROR
     payload: string
   }
 
-  interface RemoveErrorAction {
+  interface IRemoveErrorAction {
     type: TypeKeys.REMOVE_ERROR
     payload: UUID
   }
 
-  interface AddPostAction {
+  interface IAddPostAction {
     type: TypeKeys.ADD_POST
-    payload: PostInterface
+    payload: IPostInterface
   }
 
-  interface LikePostAction {
+  interface ILikePostAction {
     type: TypeKeys.LIKE_POST
     payload: string
   }
 
-  interface FilterFeedAction {
+  interface IFilterFeedAction {
     type: TypeKeys.FILTER_POSTS
     payload: PostType
   }
 
-  interface RemovePostAction {
+  interface IRemovePostAction {
     type: TypeKeys.REMOVE_POST
     payload: UUID
   }
 
-  interface OtherAction {
+  interface IOtherAction {
     type: TypeKeys.OTHER_ACTION
   }
 
-  type ErrorActions = AddErrorAction | RemoveErrorAction | OtherAction
+  type ErrorActions = IAddErrorAction | IRemoveErrorAction | IOtherAction
   type FeedActions =
-    | FilterFeedAction
-    | AddPostAction
-    | LikePostAction
-    | RemovePostAction
-    | OtherAction
+    | IFilterFeedAction
+    | IAddPostAction
+    | ILikePostAction
+    | IRemovePostAction
+    | IOtherAction
 }
 export {}

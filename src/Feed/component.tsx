@@ -3,12 +3,12 @@ import * as ReactDOM from 'react-dom'
 import Post from './Post'
 import { Col } from 'react-bootstrap'
 
-interface FeedComponentProps extends PostStore {
+interface IFeedComponentProps extends IPostStore {
   onRemovePost(id: UUID): void
   onPostLike(id: UUID): void
 }
 
-export default (props: FeedComponentProps) => {
+export default (props: IFeedComponentProps) => {
   const posts = props.feed.map((post) => {
     const { onPostLike, onRemovePost } = props
     const postProps = {

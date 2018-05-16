@@ -4,11 +4,11 @@ import TextPost from '../../components/post-types/Text'
 import VideoPost from '../../components/post-types/Video'
 import ImagePost from '../../components/post-types/Image'
 
-interface ItemFactoryProps {
-  post: Post
+interface IItemFactoryProps {
+  post: IPost
 }
 
-export default (props: ItemFactoryProps): JSX.Element => {
+export default (props: IItemFactoryProps): JSX.Element => {
   const { post } = props
   switch (post.type) {
     case PostType.Text:

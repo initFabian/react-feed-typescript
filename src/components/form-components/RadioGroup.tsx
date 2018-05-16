@@ -2,12 +2,12 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { ToggleButtonGroup, ControlLabel, Radio, FormGroup, Col } from 'react-bootstrap'
 
-interface RadioGroupProps {
+interface IRadioGroupProps {
   defaultValue: PostType.Text
   changeHandler(value: PostType): void
 }
 
-export default (props: RadioGroupProps) => {
+export default (props: IRadioGroupProps) => {
   return (
     <FormGroup>
       <Col componentClass={ControlLabel} sm={3}>

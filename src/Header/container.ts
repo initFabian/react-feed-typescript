@@ -5,7 +5,7 @@ import HeaderComponent from './component'
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = (dispatch: Dispatch<{}>) => ({
-  onAddPost(post: PostInterface) {
+  onAddPost(post: IPostInterface) {
     // IF YOU'RE READING THIS...
 
     // I was getting some some error 'X-Frame-Options' to 'sameorigin'

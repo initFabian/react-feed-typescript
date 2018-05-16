@@ -1,6 +1,6 @@
 import * as C from '../constants'
 
-const newPost = ({ title, type, body }: PostInterface) => {
+const newPost = ({ title, type, body }: IPostInterface) => {
   return {
     id: C.UUID(),
     title,
@@ -10,7 +10,7 @@ const newPost = ({ title, type, body }: PostInterface) => {
   }
 }
 
-export default (state: Post[] = [], action: FeedActions): Post[] => {
+export default (state: IPost[] = [], action: FeedActions): IPost[] => {
   switch (action.type) {
     case TypeKeys.ADD_POST:
       return [newPost(action.payload), ...state]

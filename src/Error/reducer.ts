@@ -1,11 +1,11 @@
 import * as C from '../constants'
 
-const newError = (message: string): ErrorItem => ({
+const newError = (message: string): IErrorItem => ({
   id: C.UUID(),
   message
 })
 
-export default (state: ErrorItem[] = [], action: ErrorActions): ErrorItem[] => {
+export default (state: IErrorItem[] = [], action: ErrorActions): IErrorItem[] => {
   switch (action.type) {
     case TypeKeys.ADD_ERROR:
       return [...state, newError(action.payload)]

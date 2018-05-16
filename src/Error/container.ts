@@ -3,15 +3,15 @@ import { clearError } from './actions'
 import { filterPosts } from '../Filter/actions'
 import ErrorListComponent from './component'
 
-const mapStateToProps = (state: ErrorStore) => ({
+const mapStateToProps = (state: IErrorStore) => ({
   errors: state.errors
 })
 
-interface DispatchToProps {
+interface IDispatchToProps {
   onClearError(id: UUID): void
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<ErrorActions>): DispatchToProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<ErrorActions>): IDispatchToProps => ({
   onClearError(id: UUID): void {
     dispatch(clearError(id))
   }

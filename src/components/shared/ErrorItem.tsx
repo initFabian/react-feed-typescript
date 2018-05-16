@@ -2,12 +2,12 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Col, Row } from 'react-bootstrap'
 
-interface ErrorItemProps {
-  error: ErrorItem
+interface IErrorItemProps {
+  error: IErrorItem
   onClearError(id: UUID): void
 }
 
-export default (props: ErrorItemProps) => {
+export default (props: IErrorItemProps) => {
   const removeErrorClick = () => {
     props.onClearError(props.error.id)
   }

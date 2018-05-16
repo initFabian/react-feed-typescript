@@ -1,13 +1,13 @@
 declare global {
   type UUID = 'UUID'
 
-  interface PostInterface {
+  interface IPostInterface {
     title: string
     type: PostType
     body: string
   }
 
-  interface PostProps {
+  interface IPostProps {
     body: string
   }
 }

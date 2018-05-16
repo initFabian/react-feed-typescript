@@ -21,8 +21,8 @@ const consoleMessages = (store: any) => (next: any) => (action: any) => {
   return result
 }
 
-export default (initialState: StateStore) => {
-  return createStore<StateStore>(
+export default (initialState: IStateStore) => {
+  return createStore<IStateStore>(
     appReducer,
     initialState,
     applyMiddleware(thunk, consoleMessages)

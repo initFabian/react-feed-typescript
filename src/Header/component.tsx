@@ -5,11 +5,11 @@ import FilterContainer from '../Filter/container'
 import PostRadioComponent from '../components/form-components/RadioGroup'
 import PostTextFieldComponent from '../components/form-components/TextFieldGroup'
 
-interface HeaderComponentProps {
-  onAddPost(post: PostInterface): void
+interface IHeaderComponentProps {
+  onAddPost(post: IPostInterface): void
 }
 
-export default (props: HeaderComponentProps) => {
+export default (props: IHeaderComponentProps) => {
   let titleInputRef: HTMLInputElement
   let bodyInputRef: HTMLInputElement
   let postType: PostType = PostType.Text

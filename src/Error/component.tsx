@@ -3,11 +3,11 @@ import * as ReactDOM from 'react-dom'
 import { Col, Row } from 'react-bootstrap'
 import ErrorItem from '../components/shared/ErrorItem'
 
-interface ErrorComponentProps extends ErrorStore {
+interface IErrorComponentProps extends IErrorStore {
   onClearError(id: UUID): void
 }
 
-export default (props: ErrorComponentProps) => {
+export default (props: IErrorComponentProps) => {
   const removeErrorWithId = (id: UUID) => {
     props.onClearError(id)
   }

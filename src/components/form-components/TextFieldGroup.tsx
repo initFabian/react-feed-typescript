@@ -2,13 +2,13 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { ControlLabel, FormGroup, Col } from 'react-bootstrap'
 
-interface TextFieldProps {
+interface ITextFieldProps {
   fieldLabel: string
   placeholder: string
   bindingRef: React.Ref<HTMLInputElement>
 }
 
-export default (props: TextFieldProps) => {
+export default (props: ITextFieldProps) => {
   return (
     <FormGroup controlId="formHorizontalPost">
       <Col componentClass={ControlLabel} sm={3}>

@@ -1,5 +1,5 @@
 declare global {
-  interface Post {
+  interface IPost {
     id: UUID
     title: string
     type: PostType
@@ -7,23 +7,23 @@ declare global {
     liked: boolean
   }
 
-  interface ErrorItem {
+  interface IErrorItem {
     id: UUID
     message: string
   }
 
-  interface ErrorStore {
-    errors: ErrorItem[]
+  interface IErrorStore {
+    errors: IErrorItem[]
   }
 
-  interface PostStore {
-    feed: Post[]
+  interface IPostStore {
+    feed: IPost[]
   }
 
-  interface FilterStore {
+  interface IFilterStore {
     filter: PostType
   }
 
-  interface StateStore extends ErrorStore, PostStore, FilterStore {}
+  interface IStateStore extends IErrorStore, IPostStore, IFilterStore {}
 }
 export {}

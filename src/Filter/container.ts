@@ -2,9 +2,9 @@ import { connect, Dispatch } from 'react-redux'
 import { filterPosts } from './actions'
 import FilterComponent from './component'
 
-interface MapStateToProps extends FilterStore {}
+interface IMapStateToProps extends IFilterStore {}
 
-const mapStateToProps = (state: MapStateToProps): MapStateToProps => ({
+const mapStateToProps = (state: IMapStateToProps): IMapStateToProps => ({
   filter: state.filter || 'All'
 })
 

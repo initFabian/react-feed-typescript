@@ -2,9 +2,9 @@ import { connect, Dispatch } from 'react-redux'
 import { likePost, removePost } from './actions'
 import FeedListComponent from './component'
 
-interface MapStateToProps extends PostStore, FilterStore {}
+interface IMapStateToProps extends IPostStore, IFilterStore {}
 
-const mapStateToProps = (state: MapStateToProps) => {
+const mapStateToProps = (state: IMapStateToProps) => {
   if (state.filter === 'All') return state
 
   const { feed } = state
