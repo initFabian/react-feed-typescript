@@ -47,7 +47,7 @@ Next we need to add a [tsconfig.json](link/to/documentation) document to configu
     "strict": true,
     "noImplicitThis": false
   },
-  "include": ["./src/**/*.tsx", "./src/**/*.jsx", "./src/**/*.js"]
+  "include": ["./src/**/*"]
 }
 ```
 
